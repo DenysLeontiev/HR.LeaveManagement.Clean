@@ -23,7 +23,6 @@ namespace HR.LeaveManagement.Application.Featues.LeaveType.Commands.UpdateLeaveT
 		public async Task<Unit> Handle(UpdateLeaveTypeCommandRequest request, CancellationToken cancellationToken)
 		{
 			// Validate entity
-
 			var leaveTypeToUpdate = _mapper.Map<Domain.LeaveType>(request);
 
 			await _leaveTypeRepository.UpdateAsync(leaveTypeToUpdate);
