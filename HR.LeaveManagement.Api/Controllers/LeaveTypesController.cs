@@ -20,10 +20,10 @@ namespace HR.LeaveManagement.Api.Controllers
 		}
 
 		[HttpGet]
-		public async Task<List<LeaveTypeDto>> Get()
+		public async Task<ActionResult<List<LeaveTypeDto>>> Get()
 		{
 			var leaveTypes = await _mediator.Send(new GetAllLeaveTypesQueryRequest());
-			return leaveTypes;
+			return Ok(leaveTypes);
 		}
 
 		[HttpGet("{id}")]
@@ -42,7 +42,7 @@ namespace HR.LeaveManagement.Api.Controllers
 			return CreatedAtAction(nameof(Get), new { id = response });
 		}
 
-		[HttpPut("{id}")]
+		[HttpPut("{id}")] // we dont use that id, but it is still useful for Swagger for proper documentation
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]

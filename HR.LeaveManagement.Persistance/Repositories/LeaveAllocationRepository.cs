@@ -35,7 +35,7 @@ namespace HR.LeaveManagement.Persistance.Repositories
                                          .ToListAsync();
         }
 
-        public async Task<LeaveAllocation> GetAllLeaveAllocationWithDetails(int id)
+        public async Task<LeaveAllocation> GetLeaveAllocationWithDetails(int id)
         {
             return await _context.LeaveAllocations.Include(x => x.LeaveType).FirstOrDefaultAsync(x => x.Id.Equals(id));
         }
@@ -47,5 +47,5 @@ namespace HR.LeaveManagement.Persistance.Repositories
                                                             && x.LeaveTypeId == leaveTypeId);
 
         }
-    }
+	}
 }

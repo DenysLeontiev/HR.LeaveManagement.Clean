@@ -15,7 +15,7 @@ namespace HR.LeaveManagement.Domain
 		public string? RequestComments { get; set; }
 
 		public bool? Approved { get; set; }
-		public bool Canceled { get; set; }
+		public bool Cancelled { get; set; }
 
 		public string RequestionEmployeeId { get; set; } = string.Empty;
 	}
