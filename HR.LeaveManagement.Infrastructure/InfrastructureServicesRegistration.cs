@@ -15,7 +15,7 @@ namespace HR.LeaveManagement.Infrastructure
 			services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
 			services.AddTransient<IEmailSender, EmailSender>();
 
-			services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
+			 services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
 
 			return services;
 		}
